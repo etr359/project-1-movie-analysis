@@ -1,13 +1,11 @@
-def gross_converter(gross):
-    """Takes in string value with comma and ., removes comma, converts to float
-    and multiplies by 1 million"""
-    for g in gross:
-        try:
-            if ',' not in g:
-                no_comma_gross = float(g)
-                return no_comma_gross / 1000000
-            else:
-                comma_gross = g.str.replace(',','')
-                return float(g)
-        except TypeError:
-            continue
+def clean_convert_gross(x):
+    """Check if value is a string, if True, check for comma.
+    If True remove comma and convert to float. If False, return float 
+    and divide by 1 million otherwise the value is numeric."""
+    if isinstance(x, str):
+        if ',' in x:
+            billion = x.replace(',','')
+            return float(billion)
+        if ',' not in x:
+            return (float(x))/1000000
+    return(x)
