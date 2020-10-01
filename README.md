@@ -107,7 +107,7 @@ __Next Steps:__
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./profitability_drivers_movies_2015_present.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](./profitability_drivers_movies_2015_present.ipynb) or our [presentation](./Profitability_Drivers_of_Movies_2015_to_Present.pdf).
 
 For any additional questions, please contact **Eric Roberts etr359@gmail.com, Justin Williams willj963@newschool.edu**
 
