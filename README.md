@@ -14,7 +14,7 @@ Microsoft is looking to create their own movie content. They need to know what f
 Questions:
 * What genre of movies are most profitable?
 * What is the optimal time of year to maximize profits?
-* Does higher average rating drive profitability?
+* What is the relationship between audience perception and profitability?
 ***
 
 ## Data
@@ -33,6 +33,7 @@ The following datapoints where operationalized as:
 * Profitability - total, domestic and foreign gross. 
 * Seasonality - time of year as month. 
 * Genre - type of genre defined by [IMDB tags](https://help.imdb.com/article/contribution/titles/genres/GZDRMS6R742JRGAG#)
+* Audience perception - average user rating
 
 Datapoints most prominently utilized in our analysis were:
 * Domestic, Foreign and Total Gross - reported in $USD modeled continously
@@ -73,25 +74,50 @@ These were:
 * Action, Adventure, Comedy
 
 ### Figure 3
-![Figure 3](./images/avg profit by month 2015 to present.png)
+![Figure 3](./images/avg_profit_by_month_2015_to_present.png)
+
+* July, June, May and November respectively proved to be the most profitable months for movie release.
+* September, October, January and August respectively proved to be the least profitable. 
 
 ### Figure 4
-![Figure 4](./images/total_gross.png)
+![Figure 4](./images/avg_rating_vs_total_gross.png)
+### Figure 5
+![Figure 5](./images/avg_rating_vs_total_gross_no_outliers.png)
 
+We hypothesized that there was a positive relationship between average rating and gross profit below the mean, and no relationship between average rating and gross profit above the mean. This was not the case as demonstrated by the overlayed linear regressioned subdivided by average ratings. Above and below the mean there was a positive linear relationship to profitability which was stronger above the mean. To assess the sensitivity of these results we removed the top/bottom 5 grossing movies, and the results did not change substantively.
+
+***
+There are several caveats to consider in our results which should prevent over interpretation. 
+1. The Movie Database is user generated therefore it may not be entirely comprehensive. If it excludes important movies released in certain months, our findings may be biased. 
+2. IMDB and BOM colate data from a variety of sources, if data was not collected in a consistent manner it could skew results in different directions. 
+_For example:_
+* If studios report gross figures diffferently, and tend to produce differing genres of film, that may partially account for reported levels of profitability.
+3. There are likely unmeasured variables that are related to profitability such as director, actor, awards, script quality etc. 
+
+***
 ## Conclusions
 
 Provide your conclusions about the work you've done, including any limitations or next steps.
 
-***
-Questions to consider:
-* What would you recommend the business do as a result of this work?
-* What are some reasons why your analysis might not fully solve the business problem?
-* What else could you do in the future to improve this project?
-***
+__Key insights:__
+* Multi-genre films that include Action and Adventure proved to be the most profitable
+* Individually, Sci-Fi, Animation and Adventure were the most profitable
+* Early Summer releases are the most profitable, followed closely by the Holiday season.
+* Audience perception matters
+
+__Limitations:__
+* There are other factors that merit investigation that influence overall profitability such as:
+    - director
+    - actor
+    - awards
+    - script quality
+
+__Next Steps:__
+* Future analysis should investigate how the above factors are related to audience perception and profitabilty. 
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-template.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](./profitability_drivers_movies_2015_present.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
 
 For any additional questions, please contact **name & email, name & email**
 
@@ -101,8 +127,8 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
+├── profitability_drivers_movies_2015_present.ipynb   <- Narrative documentation of analysis in Jupyter NB
 ├── DS_Project_Presentation.pdf         <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
+├── Data                                <- Both sourced externally and generated from code
 └── images                              <- Both sourced externally and generated from code
 ```
