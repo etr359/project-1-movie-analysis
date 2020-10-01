@@ -8,7 +8,7 @@ Our goal was to determine profit drivers for movie profitability from 2015 to pr
 
 ## Business Problem
 
-Microsoft is looking to create their own movie content. They need to know what factors are currently driving success at the box office. Our overarching goal is to determine why movies are doing well, and make reccomendations for the Microsoft team.
+Microsoft is looking to create their own movie content. They need to know what factors are currently driving success at the box office. Our overarching goal is to determine why movies are doing well, and make recomendations for the Microsoft team.
 
 ***
 Questions:
@@ -43,7 +43,7 @@ Datapoints most prominently utilized in our analysis were:
 
 ## Methods
 
-Descriptive statistics and histograms were created for continous variables to identify outliers and missing values. Once these were identified, appropiate action was taken to remove or transform to facilitate analysis. Value counts were calculated for categorical variables to assess distributions, cell counts and missing values. Categories were excluded or collapsed as necessary as detailed in our Jupyter Notebook. Our final analysis consisted of various visualizations addressing our three key questions of interest. Scatterplots were utilized when the variables were both continous, and barcharts used when summarizing continious variables across categories. 
+Descriptive statistics and histograms were created for continuous variables to identify outliers and missing values. Once these were identified, appropiate action was taken to remove or transform to facilitate analysis. Value counts were calculated for categorical variables to assess distributions, cell counts and missing values. Categories were excluded or collapsed as necessary as detailed in our Jupyter Notebook. Our final analysis consisted of various visualizations addressing our three key questions of interest. Scatterplots were utilized when the variables were both continous, and barcharts used when summarizing continuous variables across categories. 
 
 ## Results
 
