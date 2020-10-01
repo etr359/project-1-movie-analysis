@@ -1,4 +1,4 @@
-# Profibility drivers for Movies 2015 to present
+# Profitability drivers for Movies 2015 to present
 
 **Authors**: Eric Roberts, Justin Williams
 
