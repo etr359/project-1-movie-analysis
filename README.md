@@ -4,7 +4,7 @@
 
 ## Overview
 
-A one-paragraph overview of the project, including the business problem, data, methods, results and recommendations.
+Our goal was to determine profit drivers for movie profitability from 2015 to present. Data was gathered from Box Office Mojo (BOM) Internet Movie Database (IMDB) and The Movie Database (TMDB). Relationships between drivers and profitability were assessed visually using scattercharts and barplots. Results indicated Action and Adventure were the most profitable multi-genre films. Sci-Fi, Animation and Adventure were the most profitable singular genres. Release dates during the early summer months and holidays seasons were most profitable, and higher rated films grossed more. We reccomend Microsoft produce Action/Adventure films and release them in early summer or holiday season. Future research should address what determines favorable audience reviews. 
 
 ## Business Problem
 
@@ -46,14 +46,6 @@ Datapoints most prominently utilized in our analysis were:
 Descriptive statistics and histograms were created for continous variables to identify outliers and missing values. Once these were identified, appropiate action was taken to remove or transform to facilitate analysis. Value counts were calculated for categorical variables to assess distributions, cell counts and missing values. Categories were excluded or collapsed as necessary as detailed in our Jupyter Notebook. Our final analysis consisted of various visualizations addressing our three key questions of interest. Scatterplots were utilized when the variables were both continous, and barcharts used when summarizing continious variables across categories. 
 
 ## Results
-
-Present your key results. For Phase 1, this will be findings from your descriptive analysis.
-
-***
-Questions to consider:
-* How do you interpret the results?
-* How confident are you that your results would generalize beyond the data you have?
-***
 
 ### Figure 1
 ![Figure 1](./images/total_gross.png)
@@ -97,8 +89,6 @@ _For example:_
 ***
 ## Conclusions
 
-Provide your conclusions about the work you've done, including any limitations or next steps.
-
 __Key insights:__
 * Multi-genre films that include Action and Adventure proved to be the most profitable
 * Individually, Sci-Fi, Animation and Adventure were the most profitable
@@ -119,7 +109,7 @@ __Next Steps:__
 
 Please review our full analysis in [our Jupyter Notebook](./profitability_drivers_movies_2015_present.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
 
-For any additional questions, please contact **name & email, name & email**
+For any additional questions, please contact **Eric Roberts etr359@gmail.com, Justin Williams willj963@newschool.edu**
 
 ## Repository Structure
 
