@@ -1,93 +1,108 @@
-# Phase 1 Project
+# Profibility drivers for Movies 2015 to present
 
-## Introduction
+**Authors**: Eric Roberts, Justin Williams
 
-In this lesson, we review the guidelines for the Phase 1 Project.
+## Overview
 
-## Objectives
+A one-paragraph overview of the project, including the business problem, data, methods, results and recommendations.
 
-You will be able to:
+## Business Problem
 
-* Start your Phase 1 Project
-* Check that your project meets the requirements
-* Submit your project materials in Canvas
-* Prepare for your project review
+Microsoft is looking to create their own movie content. They need to know what factors are currently driving success at the box office. Our overarching goal is to determine why movies are doing well, and make reccomendations for the Microsoft team.
 
-## Project Overview
+***
+Questions:
+* What genre of movies are most profitable?
+* What is the optimal time of year to maximize profits?
+* Does higher average rating drive profitability?
+***
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+## Data
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project-campus/master/awesome.gif)
-
-All that remains in Phase 1 is to put our newfound data science skills to use with a large project! This project will take an entire week to complete.
-
-### Business Problem
-
-Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry.
-Your team is charged with exploring what type of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
-
-### The Data
-
-In the folder `zippedData` are movie datasets from:
-
+The data being used for this project came from a multitude of sources:
 * Box Office Mojo
 * IMDB
-* Rotten Tomatoes
 * TheMovieDB.org
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+__Notes:__ 
+_Box Office Mojo by IMDbPro receives data from a variety of sources, including film studios, distributors, sales agents, and others from around the world._
+_The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by their community dating back to 2008._
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+The following datapoints where operationalized as:
 
-## Deliverables
+* Profitability - total, domestic and foreign gross. 
+* Seasonality - time of year as month. 
+* Genre - type of genre defined by [IMDB tags](https://help.imdb.com/article/contribution/titles/genres/GZDRMS6R742JRGAG#)
 
-There are three deliverables for this project:
+Datapoints most prominently utilized in our analysis were:
+* Domestic, Foreign and Total Gross - reported in $USD modeled continously
+* Release date - reported by MM/DD/YYYY of original theater release date modeled categorically
+* Genre - modeled categorically
+* Average Rating - 10 point likert modeled continously
 
-1. A **GitHub repository**
-2. A **Jupyter Notebook**
-3. A **non-technical presentation**
+## Methods
 
-Keep in mind that the audience for these deliverables is not only your teacher, but also potential employers. Employers will look at your project deliverables to evaluate multiple skills, including coding, modeling, communication, and domain knowledge. You will want to polish these as much as you can, both during the course and afterwards.
+Descriptive statistics and histograms were created for continous variables to identify outliers and missing values. Once these were identified, appropiate action was taken to remove or transform to facilitate analysis. Value counts were calculated for categorical variables to assess distributions, cell counts and missing values. Categories were excluded or collapsed as necessary as detailed in our Jupyter Notebook. Our final analysis consisted of various visualizations addressing our three key questions of interest. Scatterplots were utilized when the variables were both continous, and barcharts used when summarizing continious variables across categories. 
 
-We provide a few resources to help you understand what makes for good deliverables.
-- The rubric associated with this assignment
-- [A template for you to use, with an example for reference][].
+## Results
 
-### GitHub Repository
+Present your key results. For Phase 1, this will be findings from your descriptive analysis.
 
-Your GitHub repository is the public-facing version of your project that your instructors and potential employers will see - make it as accessible as you can. At a minimum, it should contain all your project files and a README.md file that summarizes your project and helps visitors navigate the repository.
+***
+Questions to consider:
+* How do you interpret the results?
+* How confident are you that your results would generalize beyond the data you have?
+***
 
-### Jupyter Notebook
+### Figure 1
+![Figure 1](./images/total_gross.png)
 
-Your Jupyter Notebook is the primary source of information about your analysis. At a minimum, it should contain or import all of the code used in your project and walk the reader through your project from start to finish. You may choose to use multiple Jupyter Notebooks in your project, but you should have one that provides a full project overview as a point of entry for visitors.
+* Sci-Fi, Animation and Adventure have median gross profits > 200 million
+* Action and Fantasy have mean gross profits > 200 million with median < 100 million
+* Sport, Romance, War and Documentaries were the least profitable with < 50 million mean 
 
-### Non-Technical Presentation
+### Figure 2
+![Figure 2](./images/multigenre_total_gross_restrict_years_tenObs.png)
 
-Your non-technical presentation is your opportunity to communicate clearly and concisely about your project and it's real-world relevance. The target audience should be people with limited technical knowledge who may be interested in leveraging your project. For Phase 1, these would be Microsoft executives interested in making decisions about movie development. We recommend using Google Slides, PowerPoint or Keynote to create your presentation slides.
+Four cross-classified categories were significantly more profitable then the rest.
 
-## Getting Started
+These were:
+* Action, Adventure, Sci-Fi
+* Action, Adventure, Fantasy
+* Adventure, Animation, Comedy
+* Action, Adventure, Comedy
 
-Please start by reviewing this document. If you have any questions, please ask your instructor ASAP.
+### Figure 3
+![Figure 3](./images/avg profit by month 2015 to present.png)
 
-We recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+### Figure 4
+![Figure 4](./images/total_gross.png)
 
-Alternatively, you can fork [the Phase 1 Project Repository][], clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+## Conclusions
 
-## Project Submission and Review
+Provide your conclusions about the work you've done, including any limitations or next steps.
 
-Review [the Phase Project Submission and Review guidance][] to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+***
+Questions to consider:
+* What would you recommend the business do as a result of this work?
+* What are some reasons why your analysis might not fully solve the business problem?
+* What else could you do in the future to improve this project?
+***
 
-## Summary
+## For More Information
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-template.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
 
-## Tips
+For any additional questions, please contact **name & email, name & email**
 
-Ask for help from your peers or instructors early and often.
+## Repository Structure
 
-[A template for you to use, with an example for reference]: https://github.com/learn-co-curriculum/dsc-project-template
-[Google Chrome Save to PDF instructions]: https://www.wikihow.com/Save-a-Web-Page-as-a-PDF-in-Google-Chrome
-[the Phase 1 Project Repository]: https://github.com/learn-co-curriculum/dsc-phase-1-project-campus
-[the Phase Project Submission and Review guidance]: https://github.com/learn-co-curriculum/dsc-project-submissions-campus
+Describe the structure of your repository and its contents, for example:
+
+```
+├── README.md                           <- The top-level README for reviewers of this project
+├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
+├── DS_Project_Presentation.pdf         <- PDF version of project presentation
+├── data                                <- Both sourced externally and generated from code
+└── images                              <- Both sourced externally and generated from code
+```
